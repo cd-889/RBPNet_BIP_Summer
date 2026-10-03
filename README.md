@@ -2,6 +2,8 @@
 
 Put results, modified python scripts, bash scripts, example result files
 
+Customize paths 
+
 Modified python scripts: 
 
 Data prep and validation (lean model) 
