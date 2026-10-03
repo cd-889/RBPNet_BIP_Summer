@@ -24,5 +24,8 @@ Overall Lean Results (1 CSV)
 Overall Transformer Results (1 CSV)
 ---> Transformer 9 layer original with crosslinking correlation
 ---> Transformer 12 layer with crosslinking correlation (44 RBPS)
+---> Transformer 6 block 
 
 Slides! 
+
+Discarded Top 10%, 50% and transformer times from csv (Will add as required) - make this a seperate csv perhaps? 
