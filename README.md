@@ -1,31 +1,34 @@
 # RBPNet_BIP_Summer
 
-Put results, modified python scripts, bash scripts, example result files
+## Modified Code
 
-Customize paths 
+- This includes two files
+  ---> validate.py - This modification was made to remove code relating to the enrichment ratio filter. Credit: Claude
+  ---> prep_data.py - This was modified to filter by read coverage and enrichment ratio. These are passed in as extra parameters that can be modified as needed.
 
-Modified python scripts: 
+## Results
+- RBPNet Lean
+  ---> Read coverage - All 100% windows to 70% windows
+  ---> Enrichment Ratio Filter - Top 80% Windows
 
-Data prep and validation (lean model) 
+- RBPNet Transformer
+  ---> Read coverage - All 100% windows to 70% windows
+  ---> Transformer 12 Block Results - 44 RBPs
 
-Results: 
+Both the lean and transformer (original) models for all windows are trained on all 57 RBPs in the `ENCORE_candidates.txt` file (provided by Chris).
 
-Data coverage filter folder 
-|
---------------> Top 80
---------------> Top 75
---------------> Top 70
+Note - the 100% windows don't have training times and the RBPs that do have them are not accurate. Therefore, direct comparison to other window sizes is not possible.
 
-Each contains a csv containing results for that 
+The lean and transformer (original) models for all other window sizes is trained on 40 RBPs. 
 
-Overall Lean Results (1 CSV) 
---> RBPs and Crosslinking correlations only 
+- Window splits across training, testing and validation (for all 100% windows)
+  ---> dataset_seqsizes.csv - contains how many windows training, testing and validation contain. 
 
-Overall Transformer Results (1 CSV)
----> Transformer 9 layer original with crosslinking correlation
----> Transformer 12 layer with crosslinking correlation (44 RBPS)
----> Transformer 6 block 
 
-Slides! 
+## Results Analysis Code
+- Includes two files
+  ----> extract_results.py - Extracts training times for each RBP through training log files and metrics through the validation metrics files. Includes index of each RBP and verification for any RBP mismatch between selected file and the RBP it corresponds to. Reports how many metrics and log files were not found, across the 57 RBPs. 
+  ----> extract_windows.sh - Extracts the amount of windows for each RBP after data preparation across training, testing and validation subsets. This is done by looking through the sizes.csv file generated for each RBP after data preparation. 
 
-Discarded Top 10%, 50% and transformer times from csv (Will add as required) - make this a seperate csv perhaps? 
+
+
