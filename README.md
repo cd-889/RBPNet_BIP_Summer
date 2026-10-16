@@ -16,6 +16,7 @@
   - Transformer 12 Block Results - 44 RBPs
 
 Both the lean and transformer (original) models for all windows are trained on all 57 RBPs in the `ENCORE_candidates.txt` file (provided by Chris).
+
 Note - Most of the 100% windows don't have training times, with the exception of few RBPs with the transformer model.  However, the training was done across both the Anvil and Hive clusters. Therefore, direct comparison to other window sizes is not possible as all other transformer models for reduced window sizes were done strictly on Hive.
 
 The lean and transformer (original) models for all other window sizes is trained on 40 RBPs. 
