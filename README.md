@@ -10,11 +10,11 @@ This repository contains three sections: Modified Code (applies to the model), A
 
 ## Results
 - RBPNet Lean
-  - Read coverage - All 100% windows to 70% windows
+  - Read coverage - All 100% windows to 70% windows (80%, 75% and 70% windows)
   - Enrichment Ratio Filter - Top 80% Windows
 
 - RBPNet Transformer
-  - Read coverage - All 100% windows to 70% windows
+  - Read coverage - All 100% windows to 70% windows (80%, 75% and 70% windows)
   - Transformer 12 Block Results - 44 RBPs
 
 Both the lean and transformer (original) models for all windows are trained on all 57 RBPs in the `ENCORE_candidates.txt` file (provided by Chris). 
