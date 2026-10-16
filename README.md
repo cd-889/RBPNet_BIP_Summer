@@ -1,5 +1,7 @@
 # RBPNet_BIP_Summer
 
+This repository contains three sections: Modified Code (applies to the model), Analysis Code (extracting results & analysis) and Relevant Results. 
+
 ## Modified Code
 
 - This includes two files
