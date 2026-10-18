@@ -38,7 +38,7 @@ def gc_fraction(gc_bin_sum, exp, ip_rep, in_rep):
     return gc_frac
 def make_training_regions(counts, gc_frac, read_thres, exp, ip_rep, in_rep,
                           reproducible_enriched_windows,
-                          coverage_percentile=100, enrichment_percentile=100):
+                          coverage_percentile=100, enrichment_percentile=100): # coverage_percentile and enrichment_percentile are added as extra parameters to filter out windows
     counts['gc_bin_fraction']=counts['gc_bin'].map(gc_frac)
     counts['total']=counts[[f'{exp}_IN_{in_rep}',f'{exp}_IP_{ip_rep}']].sum(axis = 1)
 
@@ -50,11 +50,11 @@ def make_training_regions(counts, gc_frac, read_thres, exp, ip_rep, in_rep,
     tested_df = counts.loc[(counts['total']>read_thres)]
     filter_mask = pd.Series(True, index=tested_df.index)
 
-    if coverage_percentile < 100:
+    if coverage_percentile < 100: # this is where the coverage filter is applied
         coverage_thres = tested_df['total'].quantile(1-coverage_percentile/100)
         filter_mask &= tested_df['total'] >= coverage_thres
 
-    if enrichment_percentile < 100:
+    if enrichment_percentile < 100: # this is where the enrichment filter is applied
         enrichment_thres = tested_df['enrichment_l2or_mean'].quantile(1-enrichment_percentile/100)
         filter_mask &= tested_df['enrichment_l2or_mean'] >= enrichment_thres
 
@@ -193,7 +193,7 @@ if __name__ == '__main__':
             reproducible_enriched_windows,
             coverage_percentile=100,
             enrichment_percentile=80,
-        ) # change coverage and enrichment percentiles independently
+        ) # change coverage and enrichment percentiles independently here - pass them in here
         peaks_df['rep']=ip_rep
 
         sdata = prepare_sdata(bigwigs, sample_names, out, peaks_df, fasta)
