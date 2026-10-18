@@ -7,10 +7,10 @@ Cross-checks that the .out file actually corresponds to the expected RBP
 
 Usage:
     python extract_results.py \
-        --model_name RBPNet_lean \
-        --metrics_root /anvil/scratch/x-cdendhi/BIP_Summer/RBPNet_lean_outputs/training_80 \
-        --logs_dir /anvil/scratch/x-cdendhi/BIP_Summer/RBPNet_lean_outputs/training_80/training_logs \
-        --out_csv /anvil/scratch/x-cdendhi/BIP_Summer/results_compilation/results_lean_80.csv
+        --model_name (specify model name - lean/transformer) \
+        --metrics_root /path/to/your/training/results/folder \
+        --logs_dir /path/to/your/training/logs \
+        --out_csv /path/to/your/output/out.csv
 """
 
 import argparse
