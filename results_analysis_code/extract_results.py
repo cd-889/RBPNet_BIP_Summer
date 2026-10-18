@@ -9,7 +9,7 @@ Usage:
     python extract_results.py \
         --model_name (specify model name - lean/transformer) \
         --metrics_root /path/to/your/training/results/folder \
-        --logs_dir /path/to/your/training/logs \
+        --logs_dir /path/to/your/training/logs/folder \
         --out_csv /path/to/your/output/out.csv
 """
 
