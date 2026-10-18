@@ -21,7 +21,7 @@ Both the lean and transformer (original) models for all windows are trained on a
 
 Note - Most of the 100% windows don't have training times, with the exception of few RBPs with the transformer model.  However, the training was done across both the Anvil and Hive clusters. Therefore, direct comparison to other window sizes is not possible as all other transformer models for reduced window sizes were done strictly on Hive.
 
-The lean and transformer (original) models for all other window sizes is trained on 40 RBPs. 
+The lean and transformer (original) models for all other window sizes are trained on 40 RBPs. 
 
 Results are formatted with RBP name, index, crosslinking correlation (mean_profile_pearson) and training times in minutes for 80%, 75% and 70% windows. The lean and transformer model with all 100% windows are only reported with the crosslinking correlation. 
 
