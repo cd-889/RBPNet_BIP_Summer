@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=extract_windows
-#SBATCH --account=cis250169
-#SBATCH --partition=highmem
+#SBATCH --account=account_name
+#SBATCH --partition=cpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
-#SBATCH --time=2:00:00
+#SBATCH --time=1:00:00
 #SBATCH --mail-user=your_email@gmail.com
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE
 #SBATCH --output=/path/to/your/out/log/out_%A_%a.out
